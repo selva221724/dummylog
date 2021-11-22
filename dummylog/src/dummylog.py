@@ -2,6 +2,7 @@ import logging
 from datetime import datetime
 import sys
 import os
+import threading
 
 
 class DummyLog:
@@ -9,7 +10,7 @@ class DummyLog:
                  logName: str = datetime.now().strftime('%d_%m_%Y__%H_%M_%S'),
                  loggingLevel: str = 'debug',
                  stringFormat: str = '%(asctime)s: %(levelname)s: %(message)s',
-                 datetimeFormat:str = '%m/%d/%Y %I:%M:%S %p',
+                 datetimeFormat: str = '%m/%d/%Y %I:%M:%S %p',
                  logOnFolder: bool = True,
                  logFolderName: str = 'logs'
                  ):
@@ -26,8 +27,6 @@ class DummyLog:
             self.logName = logFolderName + '/' + self.logName
 
         self.initiateLogger()
-
-        pass
 
     def initiateLogger(self):
         """ This function will initiate the logger as a single threaded log"""
@@ -48,6 +47,19 @@ class DummyLog:
         fileHandler.setFormatter(logFormat)
         self.logger.addHandler(fileHandler)
 
+    def kill(self):
+        handlers = self.logger.handlers[:]
+        for handler in handlers:
+            handler.close()
+            self.logger.removeHandler(handler)
+        self.logger = None
+        self.logName = None
+        self.logger = None
+        self.loggingLevel = None
+        self.stringFormat = None
+        self.datetimeFormat = None
 
-# dl = DummyLog(logOnFolder=False)
-# dl.logger.info('Log File is Created Successfully')
+
+# dl = DummyLog()
+# dl.logger.info('haiiii')
+# dl.kill
