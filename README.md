@@ -41,7 +41,7 @@ python setup.py install
 The license for dummylog is MIT license 
 
 ## Need help?
-Stuck on your edaSQL code or problem? Any other questions? Don't
+Stuck on your dummylog code or problem? Any other questions? Don't
 hestitate to send me an email (selva221724@gmail.com).
 
 ## Usage
