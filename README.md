@@ -1,4 +1,4 @@
-# pypostalwin
+# dummylog
 
 pypostalwin is the Un-Official Python wrapper to [libpostal](https://github.com/openvenues/libpostal), a fast statistical parser/normalizer for street addresses anywhere in the world.
 
