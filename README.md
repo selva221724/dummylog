@@ -1,6 +1,11 @@
-# dummylog
+<p align="center">
+  <img src="https://raw.githubusercontent.com/selva221724/dummylog/main/readme_src/dummyloglogo.png"  width="70%" height="70%">
+  <br><br>
+</p>
 
-pypostalwin is the Un-Official Python wrapper to [libpostal](https://github.com/openvenues/libpostal), a fast statistical parser/normalizer for street addresses anywhere in the world.
+
+dummy long is the open source python package to help the python module/plugin developers to create/update the log files in simple syntax and easy convenient format
+
 
 <!---[<img src="https://img.shields.io/pypi/v/edaSQL">](https://pypi.org/project/edaSQL/)
 [<img src="https://img.shields.io/readthedocs/edasql">](https://edasql.readthedocs.io/en/latest/)
@@ -10,20 +15,12 @@ pypostalwin is the Un-Official Python wrapper to [libpostal](https://github.com/
 <img src = "https://img.shields.io/github/commit-activity/w/selva221724/edaSQL">
 <img src = "https://img.shields.io/github/languages/code-size/selva221724/edaSQL">--->
 
-## About libpostal
-libpostal is a C library for parsing/normalizing street addresses around the world using statistical NLP and open data. The goal of this project is to understand location-based strings in every language, everywhere.
 
 ## Installation
 
-### 1. Build the libpostal in windows
-Before usign the Python wrapper, you need to build the libpostal C library as a bundle which can be accessed by the python package. 
-
-[Please follow the Instructions given in the Repository](https://pypi.org/project/pypostalwin/)
-
-### 2 . Install the python wrapper 
 **Install using pip** . [Offical Python Package Here!!](https://pypi.org/project/pypostalwin/)
 ```shell
-pip install pypostalwin
+pip install dummylog
 ```
 
 (OR)
@@ -40,12 +37,18 @@ python setup.py install
 
 [Read the detailed documentation in readthedocs.io](https://pypostalwin.readthedocs.io/en/latest/)
 
+## License
+The license for dummylog is MIT license 
+
+## Need help?
+Stuck on your edaSQL code or problem? Any other questions? Don't
+hestitate to send me an email (selva221724@gmail.com).
 
 ## Usage
 
 ### Import Package
 ```python
-import pypostalwin
+import dummylog
 ```
 
 ### 1. Initialize the Address Parser Object
