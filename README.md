@@ -70,7 +70,7 @@ This will create a log file in the root directory of the python script.
 
 ### 4. To Kill the dummylog instance
 ```python
-dl.kill
+dl.kill()
 ```
 **Note:** If you want to create a new log file in the same run time , You need to kill the current instance using above syntax and creat a new object. Currently, dummylog is not supported for multithreading. 
 
