@@ -1,54 +1,53 @@
-from subprocess import Popen, PIPE
+import logging
+from datetime import datetime
+import sys
+import os
 
 
-def addressProcessor(collatedAddress):
-    collatedAddress = collatedAddress.split('Result:\n\n')[1].split('\n\n> ')[0].replace('\n', '')
-    collatedAddress = eval(collatedAddress)
-    return collatedAddress
+class DummyLog:
+    def __init__(self,
+                 logName: str = datetime.now().strftime('%d_%m_%Y__%H_%M_%S'),
+                 loggingLevel: str = 'debug',
+                 stringFormat: str = '%(asctime)s: %(levelname)s: %(message)s',
+                 datetimeFormat:str = '%m/%d/%Y %I:%M:%S %p',
+                 logOnFolder: bool = True,
+                 logFolderName: str = 'logs'
+                 ):
 
+        self.logName = logName + ".log"
+        self.logger = None
+        self.loggingLevel = loggingLevel
+        self.stringFormat = stringFormat
+        self.datetimeFormat = datetimeFormat
 
-def removeSpecialChars(address):
-    tags = {'≈': '', '≠': '', '>': '', '<': '', '+': '', '≥': '', '≤': '', '±': '', '*': '', '÷': '', '√': '',
-            '°': '', '⊥': '', '~': '', 'Δ': '', 'π': '', '≡': '', '≜': '', '∝': '', '∞': '', '≪': '', '≫': '',
-            '⌈': '', '⌉': '', '⌋': '', '⌊': '', '∑': '', '∏': '', 'γ': '', 'φ': '', '⊃': '', '⋂': '', '⋃': '',
-            'μ': '', 'σ': '', 'ρ': '', 'λ': '', 'χ': '', '⊄': '', '⊆': '', '⊂': '', '⊇': '', '⊅': '', '⊖': '',
-            '∈': '', '∉': '', '⊕': '', '⇒': '', '⇔': '', '↔': '', '∀': '', '∃': '', '∄': '', '∴': '', '∵': '',
-            'ε': '', '∫': '', '∮': '', '∯': '', '∰': '', 'δ': '', 'ψ': '', 'Θ': '', 'θ': '', 'α': '', 'β': '',
-            'ζ': '', 'η': '', 'ι': '', 'κ': '', 'ξ': '', 'τ': '', 'ω': '', '∇': ''}
-    for i, j in tags.items():
-        address = address.replace(i, j)
-    return address
+        if logOnFolder:
+            if not os.path.exists(logFolderName):
+                os.mkdir(logFolderName)
+            self.logName = logFolderName + '/' + self.logName
 
+        self.initiateLogger()
 
-class AddressParser:
-
-    def __init__(self):
-        self.exePath = r"C:\Workbench\libpostal\src\address_parser.exe"
-        self.process = Popen(self.exePath, shell=False, universal_newlines=True,
-                             stdin=PIPE, stdout=PIPE, stderr=PIPE)
         pass
 
-    def runParser(self, address):
-        address = removeSpecialChars(address)
-        address = address + ' \n'
-        self.process.stdin.write(address)
-        self.process.stdin.flush()
+    def initiateLogger(self):
+        """ This function will initiate the logger as a single threaded log"""
 
-        result = ''
-        for line in self.process.stdout:
-            if line == '}\n':
-                result += line
-                break
-            result += line
-        return addressProcessor(result)
+        self.logger = logging.getLogger(self.logName)
+        if self.loggingLevel == 'debug':
+            self.loggingLevel = logging.DEBUG
+        self.logger.setLevel(self.loggingLevel)
+        logFormat = logging.Formatter(self.stringFormat, datefmt=self.datetimeFormat)
 
-    def terminateParser(self):
-        self.process.stdin.close()
-        self.process.terminate()
-        self.process.wait(timeout=0.2)
+        # Creating and adding the console handler
+        consoleHandler = logging.StreamHandler(sys.stdout)
+        consoleHandler.setFormatter(logFormat)
+        self.logger.addHandler(consoleHandler)
 
-# lp = AddressParser()
-# parsedAddress = lp.runParser('number 2 , flat 3 , kunju rd, Mumbai, India')
+        # Creating and adding the file handler
+        fileHandler = logging.FileHandler(self.logName, mode='a')
+        fileHandler.setFormatter(logFormat)
+        self.logger.addHandler(fileHandler)
 
-# parser = pypostalwin.AddressParser()
-# parser.runParser("Input Your Address Here")
+
+# dl = DummyLog(logOnFolder=False)
+# dl.logger.info('Log File is Created Successfully')
