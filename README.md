@@ -4,7 +4,7 @@
 </p>
 
 
-dummy long is the open source python package to help the python module/plugin developers to create/update the log files in simple syntax and easy convenient format
+**dummylog** is the open source python package to help the python module/plugin developers to create/update the log files in simple syntax and easy convenient format
 
 
 <!---[<img src="https://img.shields.io/pypi/v/edaSQL">](https://pypi.org/project/edaSQL/)
@@ -46,21 +46,32 @@ hestitate to send me an email (selva221724@gmail.com).
 
 ## Usage
 
-### Import Package
+### 1. Import Package
 ```python
 import dummylog
 ```
 
-### 1. Initialize the Address Parser Object
+### 2. Initialize the dummylog Object
 ```python
-parser = pypostalwin.AddressParser()
-parser.runParser("The White House 1600 Pennsylvania Avenue NW, Washington, DC 20500, USA")
+dl = DummyLog()
+
 ```
 
-<img src="https://raw.githubusercontent.com/selva221724/edaSQL/main/readme_src/notebook_results/db_connected.png">
-
-### 2. Terminate the Address Parser Object
+### 3. Enjoy Logging
 ```python
-parser.terminateParser()
+dl.logger.info('Log File is Created Successfully')
+
+dl.logger.info('Unmayanaa Google Competitors')
+
+dl.logger.error('Vada poche')
 ```
+
+This will create a log file in the root directory of the python script.
+
+### 4. To Kill the dummylog instance
+```python
+dl.kill
+```
+**Note:** If you want to create a new log file in the same run time , You need to kill the current instance using above syntax and creat a new object. Currently, dummylog is not supported for multithreading. 
+
 
