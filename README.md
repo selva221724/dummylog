@@ -53,7 +53,7 @@ import dummylog
 
 ### 2. Initialize the dummylog Object
 ```python
-dl = DummyLog()
+dl = dummylog.DummyLog()
 
 ```
 
