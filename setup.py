@@ -4,11 +4,12 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="pypostalwin",  # This is the name of the package
+    name="dummylog",  # This is the name of the package
     version="0.0.1",  # The initial release version
     author="Tamil Selvan A V",  # Full name of the author
-    description=" python package for libpostal wrapper only for windows",
-    url="https://github.com/selva221724/pypostalwin",
+    description="dummylog is the open source python package to help the python module/plugin developers to "
+                "create/update the log files in simple syntax and easy convenient format",
+    url="https://github.com/selva221724/dummylog",
     license="MIT",
     include_package_data=True,
     long_description=long_description,  # Long description read from the the readme file
@@ -30,7 +31,7 @@ setuptools.setup(
         "Environment :: Console"
     ],  # Information to filter the project on PyPi website
     python_requires='>=3.6',  # Minimum version requirement of the package
-    py_modules=["pypostalwin"],  # Name of the python package
-    package_dir={'': 'pypostalwin/src'},  # Directory of the source code of the package
+    py_modules=["dummylog"],  # Name of the python package
+    package_dir={'': 'dummylog/src'},  # Directory of the source code of the package
 
 )
