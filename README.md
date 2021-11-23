@@ -9,18 +9,18 @@
 If you are using Flask API or any API decorators with dummylog, it will create a new log every time since decorators will trigger the function as every new instance. 
 
 
-<!---[<img src="https://img.shields.io/pypi/v/edaSQL">](https://pypi.org/project/edaSQL/)
-[<img src="https://img.shields.io/readthedocs/edasql">](https://edasql.readthedocs.io/en/latest/)
+[<img src="https://img.shields.io/pypi/v/dummylog">](https://pypi.org/project/edaSQL/)
+[<img src="https://img.shields.io/readthedocs/dummylog">](https://edasql.readthedocs.io/en/latest/)
 [<img src="https://img.shields.io/static/v1?label=license&message=MIT&color=green">](https://opensource.org/licenses/MIT)
-<img src="https://img.shields.io/pypi/wheel/edaSQL">
-<img src = "https://img.shields.io/pypi/pyversions/edaSQL">
-<img src = "https://img.shields.io/github/commit-activity/w/selva221724/edaSQL">
-<img src = "https://img.shields.io/github/languages/code-size/selva221724/edaSQL">--->
+<img src="https://img.shields.io/pypi/wheel/dummylog">
+<img src = "https://img.shields.io/pypi/pyversions/dummylog">
+<img src = "https://img.shields.io/github/commit-activity/w/selva221724/dummylog">
+<img src = "https://img.shields.io/github/languages/code-size/selva221724/dummylog">
 
 
 ## Installation
 
-**Install using pip** . [Offical Python Package Here!!](https://pypi.org/project/pypostalwin/)
+**Install using pip** . [Offical Python Package Here!!](https://pypi.org/project/dummylog/)
 ```shell
 pip install dummylog
 ```
@@ -37,7 +37,7 @@ python setup.py install
 
 <img src="https://blog.readthedocs.com/_static/logo-opengraph.png"  width="20%" height="20%">
 
-[Read the detailed documentation in readthedocs.io](https://pypostalwin.readthedocs.io/en/latest/)
+[Read the detailed documentation in readthedocs.io](https://dummylog.readthedocs.io/en/latest/)
 
 ## License
 The license for dummylog is MIT license 
