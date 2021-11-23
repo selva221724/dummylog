@@ -4,7 +4,9 @@
 </p>
 
 
-dummy long is the open source python package to help the python module/plugin developers to create/update the log files in simple syntax and easy convenient format
+**dummylog** is the open source python package to help the python module/plugin developers to create/update the log files in simple syntax and easy format. If you are looking for a single file based log, then dummylog is for you to keep your simple logs
+
+If you are using Flask API or any API decorators with dummylog, it will create a new log every time since decorators will trigger the function as every new instance. 
 
 
 <!---[<img src="https://img.shields.io/pypi/v/edaSQL">](https://pypi.org/project/edaSQL/)
@@ -41,26 +43,41 @@ python setup.py install
 The license for dummylog is MIT license 
 
 ## Need help?
-Stuck on your edaSQL code or problem? Any other questions? Don't
+Stuck on your dummylog code or problem? Any other questions? Don't
 hestitate to send me an email (selva221724@gmail.com).
 
 ## Usage
 
-### Import Package
+### 1. Import Package
 ```python
 import dummylog
 ```
 
-### 1. Initialize the Address Parser Object
+### 2. Initialize the dummylog Object
 ```python
-parser = pypostalwin.AddressParser()
-parser.runParser("The White House 1600 Pennsylvania Avenue NW, Washington, DC 20500, USA")
+dl = dummylog.DummyLog()
+
 ```
 
-<img src="https://raw.githubusercontent.com/selva221724/edaSQL/main/readme_src/notebook_results/db_connected.png">
-
-### 2. Terminate the Address Parser Object
+### 3. Enjoy Logging
 ```python
-parser.terminateParser()
+dl.logger.info('Log File is Created Successfully')
+
+dl.logger.info('Unmayanaa Google Competitors')
+
+dl.logger.error('Vada poche')
 ```
 
+This will create a log file in the root directory of the python script.
+
+### 4. To Kill the dummylog instance
+```python
+dl.kill()
+```
+**Note:** Do not use dummylog in case if you are using the logging module in the same script for other purposes. it will conflict with the logging thread and append things to gather.
+
+
+
+## Future Work
+- dummylog will be enabled for multithreading
+- enhance logging capability
