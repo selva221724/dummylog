@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.0.1",  # The initial release version
     author="Tamil Selvan A V",  # Full name of the author
     description="dummylog is the open source python package to help the python module/plugin developers to "
-                "create/update the log files in simple syntax and easy convenient format",
+                "create/update the log files in simple syntax and easy format",
     url="https://github.com/selva221724/dummylog",
     license="MIT",
     include_package_data=True,
@@ -24,7 +24,6 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Framework :: IPython",
         "Operating System :: Microsoft :: Windows :: Windows 10",
-        "Operating System :: Microsoft :: Windows :: Windows 11",
         "Intended Audience :: Science/Research",
         "Intended Audience :: Developers",
         "Topic :: Scientific/Engineering",
