@@ -2,7 +2,6 @@ import logging
 from datetime import datetime
 import sys
 import os
-import threading
 
 
 class DummyLog:
@@ -14,8 +13,7 @@ class DummyLog:
                  logOnFolder: bool = True,
                  logFolderName: str = 'logs'
                  ):
-
-        self.logName = logName + ".log"
+        self.logName = logName
         self.logger = None
         self.loggingLevel = loggingLevel
         self.stringFormat = stringFormat
@@ -43,23 +41,18 @@ class DummyLog:
         self.logger.addHandler(consoleHandler)
 
         # Creating and adding the file handler
-        fileHandler = logging.FileHandler(self.logName, mode='a')
+        fileHandler = logging.FileHandler(self.logName + ".log", mode='w')
         fileHandler.setFormatter(logFormat)
         self.logger.addHandler(fileHandler)
 
     def kill(self):
         handlers = self.logger.handlers[:]
         for handler in handlers:
-            handler.close()
             self.logger.removeHandler(handler)
+            handler.flush()
+            handler.close()
         self.logger = None
         self.logName = None
-        self.logger = None
         self.loggingLevel = None
         self.stringFormat = None
         self.datetimeFormat = None
-
-
-# dl = DummyLog()
-# dl.logger.info('haiiii')
-# dl.kill
