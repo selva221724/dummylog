@@ -6,6 +6,8 @@
 
 **dummylog** is the open source python package to help the python module/plugin developers to create/update the log files in simple syntax and easy format. If you are looking for a single file based log, then dummylog is for you to keep your simple logs
 
+If you are using Flask API or any API decorators with dummylog, it will create a new log every time since decorators will trigger the function as every new instance. 
+
 
 <!---[<img src="https://img.shields.io/pypi/v/edaSQL">](https://pypi.org/project/edaSQL/)
 [<img src="https://img.shields.io/readthedocs/edasql">](https://edasql.readthedocs.io/en/latest/)
@@ -72,6 +74,10 @@ This will create a log file in the root directory of the python script.
 ```python
 dl.kill()
 ```
-**Note:** If you want to create a new log file in the same run time , You need to kill the current instance using above syntax and creat a new object. Currently, dummylog is not supported for multithreading. 
+**Note:** Do not use dummylog in case if you are using the logging module in the same script for other purposes. it will conflict with the logging thread and append things to gather.
 
 
+
+## Future Work
+- dummylog will be enabled for multithreading
+- enhance logging capability
