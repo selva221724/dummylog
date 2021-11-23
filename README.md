@@ -4,7 +4,7 @@
 </p>
 
 
-**dummylog** is the open source python package to help the python module/plugin developers to create/update the log files in simple syntax and easy convenient format
+**dummylog** is the open source python package to help the python module/plugin developers to create/update the log files in simple syntax and easy format. If you are looking for a single file based log, then dummylog is for you to keep your simple logs
 
 
 <!---[<img src="https://img.shields.io/pypi/v/edaSQL">](https://pypi.org/project/edaSQL/)
