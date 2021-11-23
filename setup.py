@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="dummylog",  # This is the name of the package
-    version="0.0.1",  # The initial release version
+    version="0.0.2",  # The initial release version
     author="Tamil Selvan A V",  # Full name of the author
     description="dummylog is the open source python package to help the python module/plugin developers to "
                 "create/update the log files in simple syntax and easy format",
