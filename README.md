@@ -3,18 +3,16 @@
   <br><br>
 </p>
 
-
-**dummylog** is the open source python package to help the python module/plugin developers to create/update the log files in simple syntax and easy format. If you are looking for a single file based log, then dummylog is for you to keep your simple logs
-
-If you are using Flask API or any API decorators with dummylog, it will create a new log every time since decorators will trigger the function as every new instance. 
-
-
 [<img src="https://img.shields.io/pypi/v/dummylog">](https://pypi.org/project/edaSQL/)
 [<img src="https://img.shields.io/static/v1?label=license&message=MIT&color=green">](https://opensource.org/licenses/MIT)
 <img src="https://img.shields.io/pypi/wheel/dummylog">
 <img src = "https://img.shields.io/pypi/pyversions/dummylog">
 <img src = "https://img.shields.io/github/commit-activity/w/selva221724/dummylog">
 <img src = "https://img.shields.io/github/languages/code-size/selva221724/dummylog">
+
+**dummylog** is the open source python package to help the python module/plugin developers to create/update the log files in simple syntax and easy format. If you are looking for a single file based log, then dummylog is for you to keep your simple logs
+
+If you are using Flask API or any API decorators with dummylog, it will create a new log every time since decorators will trigger the function as every new instance. 
 
 
 ## Installation
