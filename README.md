@@ -58,6 +58,11 @@ import dummylog
 dl = dummylog.DummyLog()
 
 ```
+#### dummylog.DummyLog() parameters
+| Parameters    | description |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
 ### 3. Enjoy Logging
 ```python
