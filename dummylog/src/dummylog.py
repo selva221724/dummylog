@@ -6,23 +6,23 @@ import os
 
 class DummyLog:
     def __init__(self,
-                 logName: str = datetime.now().strftime('%d_%m_%Y__%H_%M_%S'),
-                 loggingLevel: str = 'debug',
-                 stringFormat: str = '%(asctime)s: %(levelname)s: %(message)s',
-                 datetimeFormat: str = '%m/%d/%Y %I:%M:%S %p',
-                 logOnFolder: bool = True,
-                 logFolderName: str = 'logs'
+                 log_name: str = datetime.now().strftime('%d_%m_%Y__%H_%M_%S'),
+                 logging_level: str = 'debug',
+                 string_format: str = '%(asctime)s: %(levelname)s: %(message)s',
+                 datetime_format: str = '%m/%d/%Y %I:%M:%S %p',
+                 log_on_folder: bool = True,
+                 log_folder_name: str = 'logs'
                  ):
-        self.logName = logName
+        self.logName = log_name
         self.logger = None
-        self.loggingLevel = loggingLevel
-        self.stringFormat = stringFormat
-        self.datetimeFormat = datetimeFormat
+        self.loggingLevel = logging_level
+        self.stringFormat = string_format
+        self.datetimeFormat = datetime_format
 
-        if logOnFolder:
-            if not os.path.exists(logFolderName):
-                os.mkdir(logFolderName)
-            self.logName = logFolderName + '/' + self.logName
+        if log_on_folder:
+            if not os.path.exists(log_folder_name):
+                os.mkdir(log_folder_name)
+            self.logName = log_folder_name + '/' + self.logName
 
         self.initiateLogger()
 
@@ -46,6 +46,7 @@ class DummyLog:
         self.logger.addHandler(fileHandler)
 
     def kill(self):
+        """ To kill the current handlers of the log"""
         handlers = self.logger.handlers[:]
         for handler in handlers:
             self.logger.removeHandler(handler)
