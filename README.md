@@ -52,13 +52,14 @@ dl = dummylog.DummyLog()
 
 ```
 #### dummylog.DummyLog() parameters
-|S.No |Parameters    | description | Type | Defult Value |
+|S.No |Parameters    | Description | Type | Default Value |
 | -------------| ------------- | ------------- | ------------- | ------------- |
-|1 | logName  | Name of the log instance/file  | string  |  datetime.now().strftime('%d_%m_%Y__%H_%M_%S')  |
-|2 | loggingLevel  | [level of logging user needed](https://docs.python.org/3/library/logging.html#levels)  | string  | "debug"  |
-|3 | stringFormat  | [Date-time format for logging](https://docs.python.org/3/library/logging.html#formatter-objects) | string  | "%m/%d/%Y %I:%M:%S %p" |
-|4 | logOnFolder  | True if you want to save them in a folder  | bool   | True |
-|5 | logFolderName  | Name of the folder to save the logs | string   | "logs" |
+|1 | log_name  | Name of the log instance/file  | string  |  datetime.now().strftime('%d_%m_%Y__%H_%M_%S')  |
+|2 | logging_level  | [level of logging that user needed](https://docs.python.org/3/library/logging.html#levels)  | string  | "debug"  |
+|3 | string_format  | [Formatter for logging](https://docs.python.org/3/library/logging.html#formatter-objects) | string  | "%(asctime)s: %(levelname)s: %(message)s" |
+|3 | datetime_format  | Date-time format for logging | string  | "%m/%d/%Y %I:%M:%S %p" |
+|4 | log_on_folder  | True if you want to save them in a folder  | bool   | True |
+|5 | log_folder_name  | Name of the folder to save the logs | string   | "logs" |
 
 ### 3. Enjoy Logging
 ```python
@@ -78,6 +79,8 @@ dl.kill()
 **Note:** Do not use dummylog in case if you are using the logging module in the same script for other purposes. it will conflict with the logging thread and append things to gather.
 
 
+### Sample Log File View
+<img src="https://raw.githubusercontent.com/selva221724/dummylog/main/readme_src/dummylog.png"  width="100%" height="100%">
 
 ## Future Work
 - dummylog will be enabled for multithreading
