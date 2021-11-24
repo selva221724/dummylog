@@ -10,7 +10,6 @@ If you are using Flask API or any API decorators with dummylog, it will create a
 
 
 [<img src="https://img.shields.io/pypi/v/dummylog">](https://pypi.org/project/edaSQL/)
-[<img src="https://img.shields.io/readthedocs/dummylog">](https://edasql.readthedocs.io/en/latest/)
 [<img src="https://img.shields.io/static/v1?label=license&message=MIT&color=green">](https://opensource.org/licenses/MIT)
 <img src="https://img.shields.io/pypi/wheel/dummylog">
 <img src = "https://img.shields.io/pypi/pyversions/dummylog">
@@ -33,12 +32,6 @@ Clone this Repository. Run this from the root directory to install
 python setup.py install
 ```
 
-## Documentation
-
-<img src="https://blog.readthedocs.com/_static/logo-opengraph.png"  width="20%" height="20%">
-
-[Read the detailed documentation in readthedocs.io](https://dummylog.readthedocs.io/en/latest/)
-
 ## License
 The license for dummylog is MIT license 
 
@@ -59,10 +52,13 @@ dl = dummylog.DummyLog()
 
 ```
 #### dummylog.DummyLog() parameters
-| Parameters    | description |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+|S.No |Parameters    | description | Type | Defult Value |
+| -------------| ------------- | ------------- | ------------- | ------------- |
+|1 | logName  | Name of the log instance/file  | string  |  datetime.now().strftime('%d_%m_%Y__%H_%M_%S')  |
+|2 | loggingLevel  | [level of logging user needed](https://docs.python.org/3/library/logging.html#levels)  | string  | "debug"  |
+|3 | stringFormat  | [Date-time format for logging](https://docs.python.org/3/library/logging.html#formatter-objects) | string  | "%m/%d/%Y %I:%M:%S %p" |
+|4 | logOnFolder  | True if you want to save them in a folder  | bool   | True |
+|5 | logFolderName  | Name of the folder to save the logs | string   | "logs" |
 
 ### 3. Enjoy Logging
 ```python
