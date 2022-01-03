@@ -3,7 +3,7 @@
   <br><br>
 </p>
 
-[<img src="https://img.shields.io/pypi/v/dummylog">](https://pypi.org/project/edaSQL/)
+[<img src="https://img.shields.io/pypi/v/dummylog">](https://pypi.org/project/dummylog/)
 [<img src="https://img.shields.io/static/v1?label=license&message=MIT&color=green">](https://opensource.org/licenses/MIT)
 <img src="https://img.shields.io/pypi/wheel/dummylog">
 <img src = "https://img.shields.io/pypi/pyversions/dummylog">
