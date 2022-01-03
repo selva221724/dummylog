@@ -6,13 +6,14 @@ import os
 
 class DummyLog:
     def __init__(self,
-                 log_name: str = datetime.now().strftime('%d_%m_%Y__%H_%M_%S'),
+                 log_name: str = 'temp',
                  logging_level: str = 'debug',
                  string_format: str = '%(asctime)s: %(levelname)s: %(message)s',
                  datetime_format: str = '%m/%d/%Y %I:%M:%S %p',
                  log_on_folder: bool = True,
-                 log_folder_name: str = 'logs'
+                 log_folder_name: str = 'logs',
                  ):
+
         self.logName = log_name
         self.logger = None
         self.loggingLevel = logging_level
