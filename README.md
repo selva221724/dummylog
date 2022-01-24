@@ -49,7 +49,7 @@ import dummylog
 dl = dummylog.DummyLog()
 
 ```
-#### dummylog.DummyLog() parameters
+#### `dummylog.DummyLog()` parameters
 |S.No |Parameters    | Description | Type | Default Value |
 | -------------| ------------- | ------------- | ------------- | ------------- |
 |1 | log_name  | Name of the log instance/file  | string  |  "temp"  |
