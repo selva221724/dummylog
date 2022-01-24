@@ -76,7 +76,7 @@ dl.kill()
 ```
 **Note:** Do not use `dummylog` in case if you are using the logging module in the same script for other purposes. it may conflict with the logging thread and append things to gather.
 
-### 5. To Create Mutiple Logs
+### 5. To Create Multiple Logs
 ```python
 dl_1 = dummylog.DummyLog(log_name = 'one')
 dl_1.logger.info('Log File is Created Successfully')
